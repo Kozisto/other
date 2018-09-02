@@ -1,0 +1,34 @@
+
+<link href="https://blockxplorer.info/flags.css" rel=stylesheet type="text/css">
+<link rel="stylesheet" href="https://blockxplorer.info/map/jqvmap.min.css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqvmap/1.5.1/jquery.vmap.min.js"></script>
+<script>
+var sample_data = {"cz":"4","fr":"10","de":"4","pl":"1","nl":"3","us":"10","gb":"4","au":"3","it":"3","gr":"6","vn":"1","ru":"2",};</script>
+<script type="text/javascript" src="https://blockxplorer.info/map/jquery.vmap.world.js" charset="utf-8"></script>
+<script>
+jQuery(document).ready(function () {
+                        jQuery('#vmap').vectorMap({
+                                map: 'world_en',
+                                backgroundColor: '#FFFFFF',
+                                color: '#ffffff',
+                                hoverOpacity: 0.6,
+                                borderColor: 'black',
+                                borderOpacity: 0.9,
+                                borderWidth: 0.6,
+                                hoverColor: 'green',
+                                selectedColor: 'green',
+                                enableZoom: true,
+                                zoomOnScroll: true,
+                                showTooltip: true,
+                                scaleColors: ['#ff0000', '#b600ff', '#0800ff', '#ffe400'],
+                                values: sample_data,
+                                normalizeFunction: 'polynomial',
+                                onLabelShow: function(event, label, code)
+                                {
+					if (code == 'XX'){label.text('Unknown Location');}else if (code == 'cz'){label.text('Czech Republic : 4 Nodes');}else if (code == 'fr'){label.text('France : 10 Nodes');}else if (code == 'de'){label.text('Germany : 4 Nodes');}else if (code == 'pl'){label.text('Poland : 1 Nodes');}else if (code == 'nl'){label.text('Netherlands : 3 Nodes');}else if (code == 'us'){label.text('United States : 10 Nodes');}else if (code == 'gb'){label.text('United Kingdom : 4 Nodes');}else if (code == 'au'){label.text('Australia : 3 Nodes');}else if (code == 'it'){label.text('Italy : 3 Nodes');}else if (code == 'gr'){label.text('Greece : 6 Nodes');}else if (code == 'vn'){label.text('Vietnam : 1 Nodes');}else if (code == 'ru'){label.text('Russia : 2 Nodes');}
+				}
+                        });
+                });</script>
+<table><tr><td width=25%></td><td><b><img src="https://blockxplorer.info/country-flags/svg/cz.svg" width=15 height=15>Czech Republic</b></td><td width=10></td><td align=center><small>4 Nodes</td><td width=10%></td><td><b><img src="https://blockxplorer.info/country-flags/svg/fr.svg" width=15 height=15>France</b></td><td width=10></td><td align=center><small>10 Nodes</td><td width=25%></td></tr><tr><td width=25%></td><td><b><img src="https://blockxplorer.info/country-flags/svg/de.svg" width=15 height=15>Germany</b></td><td width=10></td><td align=center><small>4 Nodes</td><td width=10%></td><td><b><img src="https://blockxplorer.info/country-flags/svg/pl.svg" width=15 height=15>Poland</b></td><td width=10></td><td align=center><small>1 Nodes</td><td width=25%></td></tr><tr><td width=25%></td><td><b><img src="https://blockxplorer.info/country-flags/svg/nl.svg" width=15 height=15>Netherlands</b></td><td width=10></td><td align=center><small>3 Nodes</td><td width=10%></td><td><b><img src="https://blockxplorer.info/country-flags/svg/us.svg" width=15 height=15>United States</b></td><td width=10></td><td align=center><small>10 Nodes</td><td width=25%></td></tr><tr><td width=25%></td><td><b><img src="https://blockxplorer.info/country-flags/svg/gb.svg" width=15 height=15>United Kingdom</b></td><td width=10></td><td align=center><small>4 Nodes</td><td width=10%></td><td><b><img src="https://blockxplorer.info/country-flags/svg/au.svg" width=15 height=15>Australia</b></td><td width=10></td><td align=center><small>3 Nodes</td><td width=25%></td></tr><tr><td width=25%></td><td><b><img src="https://blockxplorer.info/country-flags/svg/it.svg" width=15 height=15>Italy</b></td><td width=10></td><td align=center><small>3 Nodes</td><td width=10%></td><td><b><img src="https://blockxplorer.info/country-flags/svg/gr.svg" width=15 height=15>Greece</b></td><td width=10></td><td align=center><small>6 Nodes</td><td width=25%></td></tr><tr><td width=25%></td><td><b><img src="https://blockxplorer.info/country-flags/svg/vn.svg" width=15 height=15>Vietnam</b></td><td width=10></td><td align=center><small>1 Nodes</td><td width=10%></td><td><b><img src="https://blockxplorer.info/country-flags/svg/ru.svg" width=15 height=15>Russia</b></td><td width=10></td><td align=center><small>2 Nodes</td><td width=25%></td></tr><tr></tr></table><br><br>
+<div id="vmap" style="width: 800px; height: 600px;"></div>
+<small>Credit To <a href=http://masternodes.online target=_blank>MNO</a></small>

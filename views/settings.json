@@ -1,0 +1,189 @@
+/*
+  This file must be valid JSON. But comments are allowed
+
+  Please edit settings.json, not settings.json.template
+*/
+{
+  // name your instance!
+  "title": "DMB EXPLORER",
+
+  "address": "194.182.75.151",
+
+  // coin name
+  "coin": "Digital Money Bits",
+
+  // coin symbol
+  "symbol": "DMB",
+
+  // logo
+  "logo": "/images/logo.png",
+
+  // favicon
+  "favicon": "public/favicon.ico",
+
+  // Uses bootswatch themes (http://bootswatch.com/)
+  // Valid options:
+  //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Lumen, Paper,
+  //     Readable, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
+  // theme (see /public/themes for available themes)
+  "theme": "Darkly",
+
+  // port to listen for requests on.
+  "port" : 80,
+
+  // database settings (MongoDB)
+  "dbsettings": {
+    "user": "superuser1500",
+    "password": "hiperextra313",
+    "database": "explorerdb",
+    "address": "localhost",
+    "port": 27017
+  },
+
+  //update script settings
+  "update_timeout": 10,
+  "check_timeout": 250,
+
+  // wallet settings
+  "wallet": {
+    "host": "localhost",
+    "port": 35098,
+    "user": "explorer",
+    "pass": "password"
+  },
+
+  // confirmations
+  "confirmations": 40,
+
+  // language settings
+  "locale": "locale/en.json",
+
+  // menu settings
+  "display": {
+    "api": true,
+    "markets": false,
+    "richlist": false,
+    "twitter": false,
+    "facebook": false,
+    "googleplus": false,
+    "bitcointalk": false,
+    "website": true,
+    "slack": false,
+    "github": false,
+    "search": true,
+    "masternodes": true,
+    "movement": true,
+    "network": true
+  },
+
+  // index page (valid options for difficulty are POW, POS or Hybrid)
+  "index": {
+    "show_hashrate": true,
+    "difficulty": "POS",
+    "last_txs": 200
+  },
+
+  // ensure links on API page are valid
+  "api": {
+    "blockindex": 44,
+    "blockhash": "914a2ee6bfa066996b0c5f3f6d038444f8265faa8b3befb09fa6214cea1bf0ac",
+    "txhash": "7c0b39d121390fde973b83683afbe5c63e56bd97bc2af9c9b46c268dbe80939b",
+    "address": "xFdG4a1E81WcR9wBHHpLEaWPVdu1idziFm"
+  },
+
+  // market settings
+  //supported markets: bittrex, poloniex, yobit, empoex, bleutrade, cryptopia, ccex, coinexchange
+  //default market is loaded by default and determines last price in header
+  "markets": {
+    "coin": "CHC",
+    "exchange": "BTC",
+    "enabled": ["cryptopia"],
+    "cryptopia_id": "",
+    "ccex_key" : "Get-Your-Own-Key",
+    "coinexchange_id": "18",
+    "default": "cryptopia"
+  },
+
+  // richlist/top100 settings
+  "richlist": {
+    "distribution": true,
+    "received": true,
+    "balance": true
+  },
+  // movement page settings
+  // min amount: show transactions greater than this value
+  // low flag: greater than this value flagged yellow
+  // high flag: greater than this value flagged red
+  "movement": {
+    "min_amount": 1000,
+    "low_flag": 10000,
+    "high_flag": 50000
+  },
+
+  // default port: Default port a masternode is running.
+  "masternodes": {
+    "default_port": 35098,
+
+    // Use index-based values (starting with 0).
+    // 0 is the key of the masterlist data.
+    // -1 means that the info is not available.
+    "list_format": {
+      "address": 3,
+      "status": 1,
+      "lastseen": 6,
+      "lastpaid": 8,
+      "active" : 7,
+      "ip": 4
+    }
+  },
+
+  // twitter, facebook, googleplus, bitcointalk, github, slack, website
+  "twitter": "MazeMazecoin",
+  "facebook": "yourfacebookpage",
+  "googleplus": "yourgooglepluspage",
+  "bitcointalk": "3456157",
+  "github": "mastermaze/maze",
+  "slack": "yourfullslackinviteurl",
+  "website": "https://dmb-currency.com/",
+
+  //genesis
+  "genesis_tx": "ef64b62464a3c7b63786119bccbb6a584e69107761049f160216c3b3e05a6c5c",
+  "genesis_block": "3f4ce71618777f85a62fcba786e80273b1bc0224a851d59f3ff086200c61f145",
+
+  //heavy (enable/disable additional heavy features)
+  "heavy": false,
+
+  //amount of txs to index per address (stores latest n txs)
+  "txcount": 200,
+
+  //show total sent & received on address page (set false if PoS)
+  "show_sent_received": true,
+
+  // how to calculate current coin supply
+  // COINBASE : total sent from coinbase (PoW)
+  // GETINFO : retreive from getinfo api call (PoS)
+  // HEAVY: retreive from heavys getsupply api call
+  // BALANCES : total of all address balances
+  // TXOUTSET : retreive from gettxoutsetinfo api call
+  "supply": "GETINFO",
+
+  // how to acquire network hashrate
+  // getnetworkhashps: uses getnetworkhashps api call, returns in GH/s
+  // netmhashps: uses getmininginfo.netmhashpsm returns in MH/s
+  "nethash": "netmhashps",
+
+  // nethash unitd: sets nethash API return units
+  // valid options: "P" (PH/s), "T" (TH/s), "G" (GH/s), "M" (MH/s), "K" (KH/s)
+  "nethash_units": "G",
+
+  // Address labels
+  // example : "CGTta3M4t3yXu8uRgkKvaWd2d8DQvDPnpL": {"label": "This is a burn address", "type":"danger", "url":"http://example.com"}
+  // label (required) = test to display
+  // type (optional) = class of label, valid types: default, primary, warning, danger, success
+  // url (optional) = url to link to for more information
+  "labels": {
+      "BFeDXbiNqpNf4MF2ynioAoXtzrzSGPHGkr": {"label": "RESERVED FOR HODL BANK"}
+  //  "CLkWg5YSLod772uLzsFRxHgHiWVGAJSezm": {"label": "Donation Address", "type":"primary", "url":"http://example.com"},
+  //  "CaxX1HVWzbQ516w61XbtHR63vNmp2mvLMZ": {"label": "Max Lee War Chest"}
+  }
+}
